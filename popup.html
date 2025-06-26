@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pingfence Menu</title>
+  <link rel="stylesheet" href="extension.css">
+</head>
+<body class="pf-body">
+  <div class="pf-popup-container">
+    <div class="pf-logo-row">
+      <img src="img0001-modified-modified.png" alt="Pingfence Logo" class="pf-logo">
+      <span class="pf-title">Pingfence</span>
+    </div>
+    <div class="pf-analytics-card">
+      <div class="pf-analytics-title">Analytics</div>
+      <div class="pf-analytics-stats">
+        <div><span id="analyticsMalicious" class="pf-analytics-number">0</span><span class="pf-analytics-label">Malicious</span></div>
+        <div><span id="analyticsAds" class="pf-analytics-number">0</span><span class="pf-analytics-label">Ads</span></div>
+        <div><span id="analyticsThreats" class="pf-analytics-number">0</span><span class="pf-analytics-label">Threats</span></div>
+      </div>
+    </div>
+    <div class="pf-card pf-profile-card">
+      <div class="pf-section-title">Profile</div>
+      <div class="pf-profile-list">
+        <label class="pf-profile-option"><input type="radio" name="profile" id="profileProfessional" value="professional"><span>Professional</span></label>
+        <div class="pf-profile-summary">Blocks social media, video streaming, entertainment, and editing sites. Allows work/productivity sites.</div>
+        <label class="pf-profile-option"><input type="radio" name="profile" id="profileHome" value="home"><span>Home</span></label>
+        <div class="pf-profile-summary">Blocks adult, gambling, and high-risk sites. Allows general browsing, social media, and streaming.</div>
+        <label class="pf-profile-option"><input type="radio" name="profile" id="profileCasual" value="casual"><span>Casual</span></label>
+        <div class="pf-profile-summary">Minimal blocking. Only blocks known malicious/phishing/adult sites.</div>
+        <label class="pf-profile-option"><input type="radio" name="profile" id="profileParental" value="parental"><span>Parental Control</span></label>
+        <div class="pf-profile-summary">Blocks adult, gambling, violence, social media, streaming, and shopping sites. Allows educational and kid-friendly sites.</div>
+        <label class="pf-profile-option"><input type="radio" name="profile" id="profileFocused" value="focused"><span>Focused</span></label>
+        <div class="pf-profile-summary">Distraction-free browsing. Blocks social media, streaming, gaming, shopping, and entertainment sites. Removes ads, notifications, and autoplay content.</div>
+        <label class="pf-profile-option"><input type="radio" name="profile" id="profileHardened" value="hardened"><span>Hardened Security</span></label>
+        <div class="pf-profile-summary">Maximum protection. Blocks malware, cryptojacking, deep web content, phishing, tracking, and suspicious elements. Includes personal data protection.</div>
+      </div>
+    </div>
+    <div class="pf-card pf-feature-card">
+      <div class="pf-section-title">Features</div>
+      <div class="pf-feature-list">
+        <div class="pf-feature"><label for="adBlockToggle">Ad Blocking</label><span class="pf-toggle"><input type="checkbox" id="adBlockToggle"><label class="pf-slider" for="adBlockToggle"></label></span></div>
+        <div class="pf-feature"><label for="phishingToggle">Phishing Protection</label><span class="pf-toggle"><input type="checkbox" id="phishingToggle"><label class="pf-slider" for="phishingToggle"></label></span></div>
+        <div class="pf-feature"><label for="malwareToggle">Malware Protection</label><span class="pf-toggle"><input type="checkbox" id="malwareToggle"><label class="pf-slider" for="malwareToggle"></label></span></div>
+        <div class="pf-feature"><label for="cryptojackingToggle">Cryptojacking Protection</label><span class="pf-toggle"><input type="checkbox" id="cryptojackingToggle"><label class="pf-slider" for="cryptojackingToggle"></label></span></div>
+      </div>
+    </div>
+    <button class="pf-btn" id="parsleyBtn">Open Parsed URLs Dashboard</button>
+    <div class="pf-footer">
+      <div class="pf-marketing">No. 1 Threat Defender</div>
+      <div class="pf-footer-links">
+        <a href="https://instagram.com/pingfence" target="_blank" class="pf-footer-link">@pingfence</a>
+        <span class="pf-footer-sep">|</span>
+        <a href="mailto:pingfence@gmail.com" class="pf-footer-link">pingfence@gmail.com</a>
+        <span class="pf-footer-sep">|</span>
+        <a href="https://pingfence.vercel.app" target="_blank" class="pf-footer-link">pingfence.vercel.app</a>
+      </div>
+      <div class="pf-footer-meta">
+        <span>v1.0.9</span>
+        <span class="pf-footer-sep">|</span>
+        <a href="#" class="pf-footer-link">Terms &amp; Conditions</a>
+        <span class="pf-footer-sep">|</span>
+        <span>&copy; Pingfence 2024</span>
+      </div>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html> 
