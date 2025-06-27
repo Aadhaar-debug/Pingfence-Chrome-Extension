@@ -8,6 +8,24 @@ function getDomainFromURL(url) {
         return '';
     }
 }
+function blockAdsOnPage() {
+	const adSelectors = [
+		'[id*="ad" i]', '.ad', '.adsbygoogle', '.sponsored', '[class*="ad-" i]', '[class*="-ad" i]', '[class*="ads" i]', '[data-ad]', '[data-ads]', '[aria-label*="ad" i]', '[aria-label*="sponsored" i]'
+	];
+	let adsBlocked = 0;
+	adSelectors.forEach(selector => {
+		document.querySelectorAll(selector).forEach(el => {
+			// Only count visible elements
+			if (el.offsetParent !== null) {
+				el.remove();
+				incrementAnalyticsCounter('adsBlocked');
+				adsBlocked++;
+			}
+		});
+	});
+	return adsBlocked;
+}
+
 
 function isDomainBlacklisted(domain, blacklist) {
     return blacklist.some(pattern => domain.endsWith(pattern));
@@ -153,3 +171,10 @@ if (typeof theServiceBlocking == 'function') {
 if (typeof theBankBlocking == 'function') {
     theBankBlocking();
 } 
+// Run ad blocking on page load
+blockAdsOnPage();
+// Also run on DOM changes (for dynamically loaded ads)
+const observer = new MutationObserver(() => {
+	blockAdsOnPage();
+});
+observer.observe(document.body, { childList: true, subtree: true }); 
